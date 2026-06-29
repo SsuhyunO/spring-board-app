@@ -1,6 +1,6 @@
 package kr.co.sboard.dto;
 
-import kr.co.sboard.entity.UserEntity;
+import kr.co.sboard.entity.User;
 import lombok.*;
 
 @Getter
@@ -24,8 +24,8 @@ public class UserDTO {
     private String regDate;
     private String leaveDate;
 
-    public UserEntity toEntity(){
-        return UserEntity.builder()
+    public User toEntity(){
+        return User.builder()
                 .userid(userid)
                 .pass(pass)
                 .name(name)

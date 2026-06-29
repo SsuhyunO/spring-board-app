@@ -1,6 +1,6 @@
 package kr.co.sboard.security;
 
-import kr.co.sboard.entity.UserEntity;
+import kr.co.sboard.entity.User;
 import kr.co.sboard.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,7 +24,7 @@ public class MyUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // 사용자 조회 후 시큐리티 인증 객체(UserDetails) 반환
 
-        Optional<UserEntity> optionalUser = userRepository.findById(username);
+        Optional<User> optionalUser = userRepository.findById(username);
 
         if(optionalUser.isPresent()){
             MyUserDetails details = MyUserDetails.builder()

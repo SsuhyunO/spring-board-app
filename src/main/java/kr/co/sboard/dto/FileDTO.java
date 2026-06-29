@@ -1,6 +1,6 @@
 package kr.co.sboard.dto;
 
-import kr.co.sboard.entity.FileEntity;
+import kr.co.sboard.entity.File;
 import lombok.*;
 
 @Getter
@@ -17,8 +17,8 @@ public class FileDTO {
     private int download;
     private String rdate;
 
-    public FileEntity toEntity(){
-        return FileEntity.builder()
+    public File toEntity(){
+        return File.builder()
                 .fno(fno)
                 .ano(ano)
                 .ofname(ofname)

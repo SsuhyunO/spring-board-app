@@ -1,5 +1,6 @@
 package kr.co.sboard.entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import kr.co.sboard.dto.UserDTO;
 import lombok.*;
@@ -8,12 +9,12 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
 
 @Getter
-@Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserEntity {
+@Entity
+public class User {
     @Id
     private String userid;
 

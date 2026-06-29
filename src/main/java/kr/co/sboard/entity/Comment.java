@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import kr.co.sboard.dto.ArticleDTO;
+import kr.co.sboard.dto.CommentDTO;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -16,33 +16,24 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 @Entity
-public class ArticleEntity {
+public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ano;
+    private int cno;
 
-    private String type;
-    private String title;
+    private int parent;
     private String content;
-    private int comment;
-    private int file;
-    private int hit;
     private String writer;
     private String regip;
 
     @CreationTimestamp
     private LocalDateTime wdate;
 
-    public ArticleDTO toDTO(){
-
-        return ArticleDTO.builder()
-                .ano(ano)
-                .type(type)
-                .title(title)
+    public CommentDTO toDTO(){
+        return CommentDTO.builder()
+                .cno(cno)
+                .parent(parent)
                 .content(content)
-                .comment(comment)
-                .file(file)
-                .hit(hit)
                 .writer(writer)
                 .regip(regip)
                 .wdate(wdate.toString())

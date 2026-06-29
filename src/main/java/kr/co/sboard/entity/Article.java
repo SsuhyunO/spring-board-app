@@ -1,38 +1,48 @@
 package kr.co.sboard.entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import kr.co.sboard.dto.CommentDTO;
+import kr.co.sboard.dto.ArticleDTO;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
 @Getter
-@Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CommentEntity {
+@Entity
+public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int cno;
+    private int ano;
 
-    private int parent;
+    private String type;
+    private String title;
     private String content;
+    private int comment;
+    private int file;
+    private int hit;
     private String writer;
     private String regip;
 
     @CreationTimestamp
     private LocalDateTime wdate;
 
-    public CommentDTO toDTO(){
-        return CommentDTO.builder()
-                .cno(cno)
-                .parent(parent)
+    public ArticleDTO toDTO(){
+
+        return ArticleDTO.builder()
+                .ano(ano)
+                .type(type)
+                .title(title)
                 .content(content)
+                .comment(comment)
+                .file(file)
+                .hit(hit)
                 .writer(writer)
                 .regip(regip)
                 .wdate(wdate.toString())

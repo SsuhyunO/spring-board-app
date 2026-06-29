@@ -1,6 +1,6 @@
 package kr.co.sboard.dto;
 
-import kr.co.sboard.entity.ArticleEntity;
+import kr.co.sboard.entity.Article;
 import lombok.*;
 
 @Getter
@@ -21,9 +21,9 @@ public class ArticleDTO {
     private String regip;
     private String wdate;
 
-    public ArticleEntity toEntity(){
+    public Article toEntity(){
 
-        return ArticleEntity.builder()
+        return Article.builder()
                 .ano(ano)
                 .type(type)
                 .title(title)

@@ -1,6 +1,6 @@
 package kr.co.sboard.security;
 
-import kr.co.sboard.entity.UserEntity;
+import kr.co.sboard.entity.User;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -22,7 +22,7 @@ public class MyUserDetails implements UserDetails {
      */
 
     // User 엔티티
-    private UserEntity user;
+    private User user;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

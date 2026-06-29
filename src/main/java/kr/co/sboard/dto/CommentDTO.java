@@ -1,6 +1,6 @@
 package kr.co.sboard.dto;
 
-import kr.co.sboard.entity.CommentEntity;
+import kr.co.sboard.entity.Comment;
 import lombok.*;
 
 @Getter
@@ -17,8 +17,8 @@ public class CommentDTO {
     private String regip;
     private String wdate;
 
-    public CommentEntity toEntity(){
-        return CommentEntity.builder()
+    public Comment toEntity(){
+        return Comment.builder()
                 .cno(cno)
                 .parent(parent)
                 .content(content)

@@ -1,6 +1,6 @@
 package kr.co.sboard.dto;
 
-import kr.co.sboard.entity.TermsEntity;
+import kr.co.sboard.entity.Terms;
 import lombok.*;
 
 @Getter
@@ -14,8 +14,8 @@ public class TermsDTO {
     private String basic;
     private String privacy;
 
-    public TermsEntity toEntity(){
-        return TermsEntity.builder()
+    public Terms toEntity(){
+        return Terms.builder()
                 .no(no)
                 .basic(basic)
                 .privacy(privacy)
