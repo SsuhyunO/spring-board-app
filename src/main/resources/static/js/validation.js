@@ -99,14 +99,14 @@ document.addEventListener('DOMContentLoaded', function(){
     //--------------------------
     // 2) 비밀번호 유효성 검사 및 일치여부
     //--------------------------
-    const pass1 = document.getElementsByName('pass1')[0];
+    const pass1 = document.getElementsByName('pass')[0];
     const pass2 = document.getElementsByName('pass2')[0];
     const passResult = document.getElementsByClassName('passResult')[0];
 
     pass1.addEventListener('focusout', function(e){
         e.preventDefault();
 
-        const value = form.pass1.value;
+        const value = form.pass.value;
 
         if(!value.match(rePass)){
             passResult.innerText = '비밀번호가 유효하지 않습니다.';
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function(){
     pass2.addEventListener('focusout', function(e){
         e.preventDefault();
 
-        const value1 = form.pass1.value;
+        const value1 = form.pass.value;
         const value2 = form.pass2.value;
 
         if(value1 === value2){

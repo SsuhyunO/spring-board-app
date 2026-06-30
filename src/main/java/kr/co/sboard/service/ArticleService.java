@@ -25,6 +25,10 @@ public class ArticleService {
     }
 
     public void register(ArticleDTO dto){
+        // Mybatis
+        dao.insert(dto);
+
+        // JPA
 
     }
 
