@@ -25,7 +25,11 @@ public class Article {
     private int comment;
     private int file;
     private int hit;
-    private String writer;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "writer")
+    private User user;
+
     private String regip;
 
     @CreationTimestamp
@@ -41,7 +45,7 @@ public class Article {
                 .comment(comment)
                 .file(file)
                 .hit(hit)
-                .writer(writer)
+                .nick(user.getNick())
                 .regip(regip)
                 .wdate(wdate.toString())
                 .build();
