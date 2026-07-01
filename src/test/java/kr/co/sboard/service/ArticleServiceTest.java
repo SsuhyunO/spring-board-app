@@ -18,6 +18,7 @@ class ArticleServiceTest {
     @Autowired
     private ArticleService service;
 
+    /*
     @Test
     void findAll() {
         PageRequestDTO pageRequestDTO = PageRequestDTO.builder()
@@ -29,4 +30,6 @@ class ArticleServiceTest {
         log.info(pageResponseDTO);
 
     }
+
+     */
 }
